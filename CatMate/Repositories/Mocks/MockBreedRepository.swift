@@ -13,6 +13,10 @@ class MockBreedRepository: BreedRepositoryProtocol {
         return [Breed()]
     }
     
+    func fetchBreed(byId: UUID) -> Breed? {
+        return nil
+    }
+    
     func favouriteBreed(byId: UUID) {
         
     }

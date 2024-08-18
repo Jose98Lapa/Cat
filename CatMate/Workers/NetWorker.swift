@@ -9,6 +9,7 @@ import Foundation
 
 protocol NetWorkerProtocol {
     func fetchBreeds() -> [Breed]
+    func fetchBreed(byId: UUID) -> Breed?
     func favouriteBreed(byId: UUID)
 }
 
@@ -16,6 +17,10 @@ class NetWorker: NetWorkerProtocol {
     
     func fetchBreeds() -> [Breed] {
         [Breed()]
+    }
+    
+    func fetchBreed(byId: UUID) -> Breed? {
+        
     }
     
     func favouriteBreed(byId: UUID) {

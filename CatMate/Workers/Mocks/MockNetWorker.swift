@@ -15,6 +15,10 @@ class MockNetWorker: NetWorkerProtocol {
         Array(breeds[0..<20])
     }
     
+    func fetchBreed(byId: UUID) -> Breed? {
+        return nil
+    }
+    
     func favouriteBreed(byId: UUID) {
         
     }

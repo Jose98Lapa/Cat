@@ -9,6 +9,7 @@ import Foundation
 
 protocol BreedRepositoryProtocol {
     func fetchBreeds() -> [Breed]
+    func fetchBreed(byId: UUID) -> Breed?
     func favouriteBreed(byId: UUID)
 }
 
@@ -24,6 +25,10 @@ class BreedRepository: BreedRepositoryProtocol {
     
     func fetchBreeds() -> [Breed] {
         return [Breed()]
+    }
+    
+    func fetchBreed(byId: UUID) -> Breed? {
+        return nil
     }
     
     func favouriteBreed(byId: UUID) {
