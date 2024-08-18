@@ -8,10 +8,12 @@
 import Testing
 @testable import CatMate
 
-struct CatMateTests {
+struct ListViewModelTests {
+    
+    var viewmodel: ListViewModel
 
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+    @Test func fetchBreedsSuccessfully() async throws {
+        viewmodel.fetchBreeds()
+        #expect(!viewmodel.breeds.isEmpty)
     }
-
 }
