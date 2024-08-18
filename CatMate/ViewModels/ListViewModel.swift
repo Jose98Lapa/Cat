@@ -7,12 +7,23 @@
 
 import Foundation
 
-protocol ListViewModelProtocol: {
+protocol ListViewModelProtocol {
     
-    func fetchBreeds() -> [Breed]
-    func favouriteBreed() -> Breed?
+    var breeds: [Breed] { get }
+    func fetchBreeds()
+    func favouriteBreed()
 }
 
-struct ListViewModel: ObservableObject {
+class ListViewModel: ObservableObject, ListViewModelProtocol {
+
     
+    @Published private(set) var breeds: [Breed] = []
+    
+    func fetchBreeds() {
+        let breed = Breed()
+        breeds.append(breed)
+    }
+    
+    func favouriteBreed() {
+    }
 }
