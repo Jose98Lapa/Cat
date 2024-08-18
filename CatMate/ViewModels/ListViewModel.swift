@@ -7,6 +7,10 @@
 
 import Foundation
 
+enum ListViewModelType {
+    case breedList, favouriteList
+}
+
 protocol ListViewModelProtocol {
     
     var breeds: [Breed] { get }
