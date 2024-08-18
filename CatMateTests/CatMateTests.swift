@@ -10,10 +10,14 @@ import Testing
 
 struct ListViewModelTests {
     
-    var viewmodel: ListViewModel
+    var viewModel: ListViewModel
+    
+    init() {
+        self.viewModel = ListViewModel()
+    }
 
     @Test func fetchBreedsSuccessfully() async throws {
-        viewmodel.fetchBreeds()
-        #expect(!viewmodel.breeds.isEmpty)
+        viewModel.fetchBreeds()
+        #expect(!viewModel.breeds.isEmpty)
     }
 }
