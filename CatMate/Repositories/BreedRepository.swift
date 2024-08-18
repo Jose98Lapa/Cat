@@ -14,6 +14,14 @@ protocol BreedRepositoryProtocol {
 
 class BreedRepository: BreedRepositoryProtocol {
     
+    private let netWorker: NetWorkerProtocol
+    private let cacheWorker: CacheWorkerProtocol
+    
+    init(netWorker: NetWorkerProtocol, cacheWorker: CacheWorkerProtocol) {
+        self.netWorker = netWorker
+        self.cacheWorker = cacheWorker
+    }
+    
     func fetchBreeds() -> [Breed] {
         return [Breed()]
     }
