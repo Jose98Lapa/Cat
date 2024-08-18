@@ -14,7 +14,7 @@ enum ListViewModelType {
 protocol ListViewModelProtocol {
     
     var breeds: [Breed] { get }
-    var repository: BreedRepository { get }
+    var listType: ListViewModelType { get }
     func fetchBreeds()
     func favouriteBreed(byId id: UUID)
 }
@@ -22,12 +22,14 @@ protocol ListViewModelProtocol {
 class ListViewModel: ObservableObject, ListViewModelProtocol {
 
     @Published private(set) var breeds: [Breed] = []
-    private var repository: BreedRepository
+    private let repository: BreedRepository
+    let listType: ListViewModelType
     private var page: Int = 0
     private var itemsPerPage: Int = 20
     
-    init(repository: BreedRepository) {
+    init(repository: BreedRepository, listType: ListViewModelType) {
         self.repository = repository
+        self.listType = listType
     }
     
     func fetchBreeds() {
