@@ -22,12 +22,12 @@ protocol ListViewModelProtocol {
 class ListViewModel: ObservableObject, ListViewModelProtocol {
 
     @Published private(set) var breeds: [Breed] = []
-    private let repository: BreedRepository
+    private let repository: BreedRepositoryProtocol
     let listType: ListViewModelType
     private var page: Int = 0
     private var itemsPerPage: Int = 20
     
-    init(repository: BreedRepository, listType: ListViewModelType) {
+    init(repository: BreedRepositoryProtocol, listType: ListViewModelType) {
         self.repository = repository
         self.listType = listType
     }
