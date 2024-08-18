@@ -14,9 +14,8 @@ struct GetFavouritesRequest: Request {
     var parameters: [String : String]?
     var body: Data?
     
-    init(parameters: [String : String]? = nil) {
+    init() {
         self.url = URL(string: GetBreedsRequest.baseURLString.appending("favourites"))
         self.method = .GET
-        self.parameters = parameters
     }
 }
