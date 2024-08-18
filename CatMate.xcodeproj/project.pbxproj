@@ -26,10 +26,14 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Models/Breed.swift,
+				Networking/Requests/GetBreedByIdRequest.swift,
+				Networking/Requests/GetBreedsRequest.swift,
+				Networking/Requests/GetFavouritesRequest.swift,
 				Repositories/BreedRepository.swift,
 				Repositories/Mocks/MockBreedRepository.swift,
 				ViewModels/ListViewModel.swift,
 				Workers/CacheWorker.swift,
+				Workers/CoreDataWrapper.swift,
 				Workers/Mocks/MockCacheWorker.swift,
 				Workers/Mocks/MockNetWorker.swift,
 				Workers/NetWorker.swift,
