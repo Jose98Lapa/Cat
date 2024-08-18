@@ -14,7 +14,8 @@ struct ListViewModelTests {
     var viewModel: ListViewModel
     
     init() {
-        self.viewModel = ListViewModel(repository: MockBreedRepository(), listType: .breedList)
+        let mockRepository: BreedRepositoryProtocol = MockBreedRepository()
+        self.viewModel = ListViewModel(repository: mockRepository, listType: .breedList)
     }
 
     @Test func fetchBreedsSuccessfully() async throws {
