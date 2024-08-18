@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+class MockBreedRepository: BreedRepositoryProtocol {
+    
+    func fetchBreeds() -> [Breed] {
+        return [Breed()]
+    }
+    
+    func favouriteBreed(byId: UUID) {
+        
+    }
+}

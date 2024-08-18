@@ -33,8 +33,7 @@ class ListViewModel: ObservableObject, ListViewModelProtocol {
     }
     
     func fetchBreeds() {
-        let breed = Breed()
-        breeds.append(breed)
+        breeds.append(contentsOf: repository.fetchBreeds())
     }
     
     func favouriteBreed(byId id: UUID) {
